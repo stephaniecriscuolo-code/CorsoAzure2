@@ -1,0 +1,10 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using System.Text.Json;
+global using WebApplicationAPICorsoAzure;
+global using WebApplicationAPICorsoAzure.Data;
+global using WebApplicationAPICorsoAzure.DTO;
+global using WebApplicationAPICorsoAzure.Endpoints;
+global using WebApplicationAPICorsoAzure.ExtensionMethod;
+global using WebApplicationAPICorsoAzure.ToDoItemes;
+global using Microsoft.AspNetCore.Mvc;
+global using WebApplicationAPICorsoAzure.GlobalExceptionMiddleware;

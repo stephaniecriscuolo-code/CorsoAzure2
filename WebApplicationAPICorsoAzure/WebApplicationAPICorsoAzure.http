@@ -1,0 +1,6 @@
+@WebApplicationAPICorsoAzure_HostAddress = http://localhost:5007
+
+GET {{WebApplicationAPICorsoAzure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
