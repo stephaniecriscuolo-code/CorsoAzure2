@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationAPICorsoAzure", "WebApplicationAPICorsoAzure\WebApplicationAPICorsoAzure.csproj", "{6EF18411-9A5B-4952-AE7A-348FBC94BA24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaCalcolatrice", "ClassLibrary1\LibreriaCalcolatrice.csproj", "{A29A05A6-1F03-4495-AECD-B669F58D443A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaCalcolatrice.Tests", "LibreriaCalcolatrice.Tests\LibreriaCalcolatrice.Tests.csproj", "{FC233055-80F7-484B-95A5-19A6811936EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6EF18411-9A5B-4952-AE7A-348FBC94BA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EF18411-9A5B-4952-AE7A-348FBC94BA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EF18411-9A5B-4952-AE7A-348FBC94BA24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29A05A6-1F03-4495-AECD-B669F58D443A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29A05A6-1F03-4495-AECD-B669F58D443A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29A05A6-1F03-4495-AECD-B669F58D443A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29A05A6-1F03-4495-AECD-B669F58D443A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC233055-80F7-484B-95A5-19A6811936EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC233055-80F7-484B-95A5-19A6811936EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC233055-80F7-484B-95A5-19A6811936EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC233055-80F7-484B-95A5-19A6811936EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

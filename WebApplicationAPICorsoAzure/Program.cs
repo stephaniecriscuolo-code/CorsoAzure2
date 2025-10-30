@@ -3,7 +3,7 @@
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.RegisterHttpServices();
-builder.Services.RegisteredServices(); //metodo di estensione per registrare i servizi personalizzati
+builder.Services.RegisteredServices(builder.Configuration); //metodo di estensione per registrare i servizi personalizzati
 #endregion
 
 #region EndPoints
@@ -19,11 +19,12 @@ if (app.Environment.IsDevelopment())//dfferenziare tra ambiente di sviluppo e pr
 }
 app.UseMiddleware<GlobalExceptionMiddleware>(); //inserimento del middleware per la gestione globale delle eccezioni
 app.RegisterToDoItemsEndopoints(); //metodo di estensione per registrare gli endpoint personalizzati
+app.ProvaRegisterToDoItemsEndopoints();
 //verifica conn db
-app.MapGet("/product",async (DBContext context) =>
+app.MapGet("/product", async (DBContext context) =>
 {
-   await Task.Delay(1000);
-    var data=context.Products;
+    await Task.Delay(1000);
+    var data = context.Products;
     return Results.Ok();
 
 });
@@ -31,9 +32,12 @@ app.MapGet("/product",async (DBContext context) =>
 app.MapGet("/prod", async (DBContext context) =>
 {
     var data = await context.Products.Select
-    (p => new ProductDTO { ProductId = p.ProductId,
-        ProductName= p.ProductName,
-        Category = p.Category.CategoryName }).ToListAsync();
+    (p => new ProductDTO
+    {
+        ProductId = p.ProductId,
+        ProductName = p.ProductName,
+        Category = p.Category.CategoryName
+    }).ToListAsync();
     return Results.Ok(data);
 
 });

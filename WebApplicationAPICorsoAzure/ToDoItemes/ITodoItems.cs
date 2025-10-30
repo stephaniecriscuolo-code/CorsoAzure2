@@ -5,6 +5,7 @@
     public record CreateTodoItem(string Title, string Category);
     public interface ITodoItems
     {
+        string ProvaGetAllItems();
         Task<List<TodoItem>> GetAllItems();//Task vuol dire che è asincrono
         Task<TodoItem?> GetItem(int Id);
         Task<TodoItem> CreateItem(CreateTodoItem newItem);

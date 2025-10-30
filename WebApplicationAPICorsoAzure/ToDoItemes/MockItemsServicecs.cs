@@ -1,15 +1,41 @@
-﻿namespace WebApplicationAPICorsoAzure.ToDoItemes
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using WebApplicationAPICorsoAzure.Configuration;
+
+namespace WebApplicationAPICorsoAzure.ToDoItemes
 {
     public class MockItemsServicecs : ITodoItems
     {
+        private readonly IConfiguration configuration;
+        private readonly IOptions<AppSettings> appsettings;
+        public MockItemsServicecs(IConfiguration configuration, IOptions<AppSettings> appsettings)
+        {
+
+            this.configuration = configuration;
+            this.appsettings = appsettings;
+        }
 
         private static List<TodoItem> todoItems = new List<TodoItem>
     {
         new TodoItem(1, "1", false, "1"),
         new TodoItem(2, "2", true, "2")
     };
+
+        public string ProvaGetAllItems()
+        {
+            var miovalore = configuration["MiaChiave"];
+            var miovaloreA = configuration["MyKeyComplessa:A"];
+            var x = appsettings.Value.A;
+            var tot = miovalore + " " + miovaloreA + " " + x.ToString();
+            //await Task.Delay(1000);//simula un ritardo di 1 secondo
+            return tot;
+        }
         public async Task<List<TodoItem>> GetAllItems()
         {
+            var miovalore = configuration["MiaChiave"];
+            var miovaloreA = configuration["MyKeyComplessa:A"];
+            var x = appsettings.Value.A;
+
             await Task.Delay(1000);//simula un ritardo di 1 secondo
             return todoItems;
         }

@@ -2,6 +2,15 @@
 
 public static class ToDoItemsEndopoints
 {
+    private static IResult ProvaGetAll(ITodoItems service)
+    {
+        return Results.Ok(service.ProvaGetAllItems());
+    }
+    public static void ProvaRegisterToDoItemsEndopoints(this WebApplication app)//stiamo estenendendo i services nella classe
+    {
+        var group = app.MapGroup("/todoitems");
+        group.MapGet("/stepProva", ProvaGetAll);
+    }
     private static async Task<IResult> GetAll(ITodoItems service)
     {
         return Results.Ok(await service.GetAllItems());
@@ -10,15 +19,15 @@ public static class ToDoItemsEndopoints
     {
         var group = app.MapGroup("/todoitems");
         group.MapGet("/step", GetAll);// async (ITodoItems service) =>
-        //{
-            //var items = new List<TodoItem>
-            //{
-            //    new TodoItem(1, "1", false),
-            //    new TodoItem(2, "2", true)
-            //};
-            // return Results.Ok(items);
-            //return Results.NotFound();
-       // });//endpoint di default che risponde con il contenuto delle parentesi graffe
+                                      //{
+                                      //var items = new List<TodoItem>
+                                      //{
+                                      //    new TodoItem(1, "1", false),
+                                      //    new TodoItem(2, "2", true)
+                                      //};
+                                      // return Results.Ok(items);
+                                      //return Results.NotFound();
+                                      // });//endpoint di default che risponde con il contenuto delle parentesi graffe
         group.MapGet("/{id}", async (int id, ITodoItems service) =>
         {
             var item = await service.GetItem(id);
